@@ -1,0 +1,2 @@
+class SpreadsheetsController < ApplicationController
+end
