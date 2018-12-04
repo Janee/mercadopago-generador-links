@@ -1,0 +1,19 @@
+<h1>Welcome to Mercado Pago's links generator</h1>
+
+<div class="center">
+  <h2>1. Add your spreadsheet</h2>
+  <p>
+    You need to add your .xlsx or .csv file, be aware that your file needs to have the following format:
+    <ul>
+      <li>title</li>
+      <li>quantity</li>
+      <li>currency</li>
+      <li>unit_price</li>
+      <li>external_reference</li>
+    </ul>
+  </p>
+  <%= form_tag root_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Add file" %>
+  <% end %>
+</div>

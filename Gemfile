@@ -53,7 +53,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Excel
-gem 'rubyXL'
+gem 'roo'
 
 # Mercado Pago SDK
-gem 'mercadopago-sdk' 
+gem 'mercadopago-sdk'
