@@ -12,7 +12,7 @@
       <li>external_reference</li>
     </ul>
   </p>
-  <%= form_tag root_path, multipart: true do %>
+  <%= form_tag create_links_path, multipart: true do %>
     <%= file_field_tag :file %>
     <%= submit_tag "Add file" %>
   <% end %>
