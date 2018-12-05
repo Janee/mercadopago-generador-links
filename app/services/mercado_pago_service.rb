@@ -1,9 +1,9 @@
 # Mercado Pago Payments
 module MercadoPagoService
   class << self
-    def preference(params, preference_params)
-      mp = MercadoPago.new(params[:client_id], params[:client_secret])
-      preference = mp.create_preference(preference_params)
+    def preference(credentials, preference_data)
+      mp = MercadoPago.new(credentials[:client_id], credentials[:client_secret])
+      preference = mp.create_preference(preference_data)
 
       preference['response']['init_point']
     end
