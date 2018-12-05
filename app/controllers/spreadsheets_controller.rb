@@ -6,6 +6,9 @@ class SpreadsheetsController < ApplicationController
                                     qty: /(quantity)/i,
                                     price: /(unit_price)/i,
                                     external: /(external_reference)/i)
+  end
+
+  def create_preferences(data)
     data.each do |record|
       preference_params = {
         "items": [{
@@ -17,10 +20,6 @@ class SpreadsheetsController < ApplicationController
         }],
         "external_reference": record[:external]
       }
-      puts preference_params
-
-      byebug
     end
-
   end
 end
