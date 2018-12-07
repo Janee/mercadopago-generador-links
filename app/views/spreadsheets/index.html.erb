@@ -1,0 +1,42 @@
+<div class="header center">
+  <h1><strong>Hola!</strong> Soy un generador de links de pago</h1>
+  <p>Hay ocasiones en las que necesitas crear links para que tus clientes paguen
+    de forma masiva, puedes usar esta herramienta como apoyo.</p>
+</div>
+
+<div class="form center">
+  <h2>Comencemos...</h2>
+  <%= form_tag new_spreadsheet_path, multipart: true do %>
+    <div class="step_1">
+      <h3>1. Ingresa tus credenciales</h3>
+      <p>
+        Te prometo que no las guardaré ni haré mal uso de ellas.
+      </p>
+      <%= text_field_tag :client_id, nil, placeholder: 'Client ID' %>
+      <%= password_field_tag :client_secret, nil, placeholder: 'Client Secret' %>
+    </div>
+    <div class="step_2">
+      <h3>2. Añade tu excel</h3>
+      <p>
+        Puedes añadir tu archivo .xlsx o .csv, revisa que tu archivo tenga
+        los siguientes encabezados en inglés:
+      </p>
+      <div class="smalltable">
+        <table class="u-full-width">
+          <thead>
+            <th>title</th>
+            <th>quantity</th>
+            <th>currency</th>
+            <th>unit_price</th>
+            <th>external_reference</th>
+          </thead>
+        </table>
+      </div>
+
+      <%= file_field_tag :file %>
+      <p>
+        <%= submit_tag 'Quiero mis links!', class: 'button button-primary' %>
+      </p>
+    </div>
+  <% end %>
+</div>
