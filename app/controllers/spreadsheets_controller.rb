@@ -1,16 +1,20 @@
 class SpreadsheetsController < ApplicationController
-  def create_links
+  def new
     credentials = {
       client_id: params[:client_id],
       client_secret: params[:client_secret]
     }
     xlsx = Roo::Spreadsheet.open(params[:file])
-    data = xlsx.sheet('Data').parse(title: /(title)/i,
-                                    currency: /(currency)/i,
-                                    qty: /(quantity)/i,
-                                    price: /(unit_price)/i,
-                                    external: /(external_reference)/i)
-    data.each do |record|
+    create_links(credentials, xlsx)
+  end
+
+  def create_links(credentials, xlsx)
+    @data = xlsx.sheet('Data').parse(title: /(title)/i,
+                                     currency: /(currency)/i,
+                                     qty: /(quantity)/i,
+                                     price: /(unit_price)/i,
+                                     external: /(external_reference)/i)
+    @data.each do |record|
       preference_data = {
         "items": [{
           "title": record[:title],
@@ -24,6 +28,8 @@ class SpreadsheetsController < ApplicationController
       record[:link] = MercadoPagoService.preference(credentials,
                                                     preference_data)
     end
-    
+    respond_to do |format|
+      format.html { render :results }
+    end
   end
 end

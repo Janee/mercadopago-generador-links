@@ -1,0 +1,24 @@
+<h1>Results</h1>
+
+<table>
+  <thead>
+    <th>title</th>
+    <th>quantity</th>
+    <th>currency</th>
+    <th>unit_price</th>
+    <th>external_reference</th>
+    <th>link</th>
+  </thead>
+  <tbody>
+    <% @data.each do |record| %>
+     <tr>
+       <td><%= record[:title]%></td>
+       <td><%= record[:currency]%></td>
+       <td><%= record[:qty]%></td>
+       <td><%= record[:price]%></td>
+       <td><%= record[:external]%></td>
+       <td><%= record[:link]%></td>
+     </tr>
+    <% end %>
+  </tbody>
+</table>

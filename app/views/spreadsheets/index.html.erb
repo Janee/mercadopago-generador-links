@@ -1,5 +1,5 @@
 <h1>Welcome to Mercado Pago's links generator</h1>
-<%= form_tag create_links_path, multipart: true do %>
+<%= form_tag new_spreadsheet_path, multipart: true do %>
   <div class="center">
     <h2>1. Please enter your credentials</h2>
     <p>I solemnly swear that my intentions are not good and I will not save you credentials</p>
@@ -20,6 +20,6 @@
     </p>
 
     <%= file_field_tag :file %>
-    <%= submit_tag "Add file" %>
+    <%= submit_tag "Generate!" %>
   </div>
 <% end %>
