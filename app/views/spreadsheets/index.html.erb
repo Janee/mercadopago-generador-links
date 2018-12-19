@@ -13,17 +13,13 @@
   <%= form_tag new_spreadsheet_path, multipart: true do %>
     <div class="step_1">
       <h3>1. Ingresa tus credenciales</h3>
-      <p>
-        Te prometo que no las guardaré ni haré mal uso de ellas.
-      </p>
       <%= text_field_tag :client_id, nil, placeholder: 'Client ID' %>
       <%= password_field_tag :client_secret, nil, placeholder: 'Client Secret' %>
     </div>
     <div class="step_2">
       <h3>2. Añade tu excel</h3>
       <p>
-        Puedes añadir tu archivo .xlsx o .csv, revisa que tu archivo tenga
-        los siguientes encabezados en inglés:
+        Puedes añadir tu archivo .xlsx o .csv, revisa que la hoja se llame <pre><code>Data</code></pre> y tenga los siguientes encabezados en inglés:
       </p>
       <div class="smalltable">
         <table class="u-full-width">
