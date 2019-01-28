@@ -9,6 +9,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'jbuilder', '~> 2.5'
 gem 'mercadopago-sdk'
 gem 'mini_racer', platforms: :ruby
+gem 'nokogiri', '>=1.8.5'
 gem 'pg'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.1', '>= 5.2.1.1'
