@@ -11,7 +11,7 @@ gem 'mercadopago-sdk'
 gem 'mini_racer', platforms: :ruby
 gem 'nokogiri', '>=1.8.5'
 gem 'pg'
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 3.12'
 gem 'rails', '~> 5.2.1', '>= 5.2.1.1'
 gem 'roo', '~> 2.7.0'
 gem 'sass-rails', '~> 5.0'
