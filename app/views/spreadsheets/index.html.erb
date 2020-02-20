@@ -1,19 +1,42 @@
-<h1>Welcome to Mercado Pago's links generator</h1>
-
-<div class="center">
-  <h2>1. Add your spreadsheet</h2>
+<div class="header center">
+  <h1><strong>Hola!</strong> Soy un generador de links de pago</h1>
   <p>
-    You need to add your .xlsx or .csv file, be aware that your file needs to have the following format:
-    <ul>
-      <li>title</li>
-      <li>quantity</li>
-      <li>currency</li>
-      <li>unit_price</li>
-      <li>external_reference</li>
-    </ul>
+    Hay ocasiones en las que necesitas crear links de pago masivos,
+    con apoyo de esta app puedes lograrlo. Puedes obtener tus credenciales 
+    dando clic en <a target="_blank" href="https://www.mercadopago.com/mlm/account/credentials">obtener credenciales</a> (necesitas
+    iniciar sesión).
   </p>
-  <%= form_tag root_path, multipart: true do %>
-    <%= file_field_tag :file %>
-    <%= submit_tag "Add file" %>
+</div>
+
+<div class="form center">
+  <h2>Comencemos...</h2>
+  <%= form_tag new_spreadsheet_path, multipart: true do %>
+    <div class="step_1">
+      <h3>1. Ingresa tus credenciales</h3>
+      <%= text_field_tag :client_id, nil, placeholder: 'Client ID' %>
+      <%= password_field_tag :client_secret, nil, placeholder: 'Client Secret' %>
+    </div>
+    <div class="step_2">
+      <h3>2. Añade tu excel</h3>
+      <p>
+        Puedes añadir tu archivo .xlsx o .csv, revisa que la hoja se llame <pre><code>Data</code></pre> y tenga los siguientes encabezados en inglés:
+      </p>
+      <div class="smalltable">
+        <table class="u-full-width">
+          <thead>
+            <th>title</th>
+            <th>quantity</th>
+            <th>currency</th>
+            <th>unit_price</th>
+            <th>external_reference</th>
+          </thead>
+        </table>
+      </div>
+
+      <%= file_field_tag :file %>
+      <p>
+        <%= submit_tag 'Quiero mis links!', class: 'button button-primary' %>
+      </p>
+    </div>
   <% end %>
 </div>

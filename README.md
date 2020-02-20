@@ -1,24 +1,9 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Este es un proyecto cuya única finalidad es ayudar a vendedores de Mercado Pago con limitantes técnicas. El proyecto no almacena ninguna información en base de datos ni busca perjudicar de ninguna forma.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Stack:
+* Ruby 2.4.5
+* Heroku
+* Skeleton CSS Framework
+* Mercado Pago
